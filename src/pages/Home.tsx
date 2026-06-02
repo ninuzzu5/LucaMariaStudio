@@ -45,23 +45,19 @@ export default function Home({ navigate }: HomeProps) {
         </div>
 
         <div className="relative z-10 px-6 md:px-12 flex flex-col justify-end h-full pb-32">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#F2F0EC] mb-4 md:mb-10 mix-blend-difference"
-          >
-            LMS — SS26
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-declaration text-[24vw] md:text-[14vw] leading-[0.75] md:leading-[0.75] uppercase text-[#F2F0EC] -ml-2 md:-ml-4 mix-blend-overlay break-words"
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="font-declaration text-[24vw] md:text-[14vw] leading-[0.75] uppercase text-[#F2F0EC] -ml-2 md:-ml-4 mix-blend-overlay"
           >
-            WHO OWNS<br />
-            <span className="text-[#F2F0EC]/20 pl-4 md:pl-32">THE</span><br />
-            STREETS?
+            TUTTI
+            <br />
+            <span className="inline-block origin-left scale-x-[0.68] whitespace-nowrap pl-1 tracking-[-0.08em] text-[#F2F0EC]/20 sm:scale-x-100 sm:text-[19vw] sm:tracking-[-0.05em] md:pl-32 md:text-[14vw]">
+              COLPEVOLI
+            </span>
+            <br />
+            SS26
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, x: -20 }}

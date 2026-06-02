@@ -94,7 +94,7 @@ export default function About({ key }: { key?: string }) {
 
         {/* riga 3 - Minimal Values */}
         <div className="p-6 md:p-16 min-h-[50vh] flex flex-col justify-end pb-32">
-          <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#1E2D4A] mb-12">— Valori & Tecniche</p>
+          <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#C8C4BC] mb-12">— Valori & Tecniche</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
              {['Appartenenza', 'Ribellione', 'Empatia', 'Sperimentazione'].map((val, i) => (
                 <div key={val} className="border-t border-[#F2F0EC]/20 pt-6">

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const collection = {
   title: 'SS26',
-  subtitle: 'Act Now Or Swim Later',
+  subtitle: 'TUTTI COLPEVOLI',
   description:
     'La collezione SS26 di Luca Maria Studio esplora il paradosso tra urgenza e inerzia. Ispirata dalla crisi ambientale e dall\'attivismo underground, ogni capo porta un messaggio stampato a mano. Tessuti di recupero, silhouette oversize, denim grezzo — la moda come dichiarazione d\'intenti.',
   looks: [
