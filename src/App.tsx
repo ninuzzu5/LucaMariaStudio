@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 // Pages
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
+import ProjectDetail from './pages/ProjectDetail';
 import Collections from './pages/Collections';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -32,7 +33,8 @@ export default function App() {
       <main className="flex-grow">
         <AnimatePresence mode="wait">
           {currentPage === 'home' && <Home key="home" navigate={navigate} />}
-          {currentPage === 'portfolio' && <Portfolio key="portfolio" />}
+          {currentPage === 'portfolio' && <Portfolio key="portfolio" navigate={navigate} />}
+          {currentPage === 'tutti-colpevoli' && <ProjectDetail key="tutti-colpevoli" navigate={navigate} />}
           {currentPage === 'collections' && <Collections key="collections" />}
           {currentPage === 'about' && <About key="about" />}
           {currentPage === 'contact' && <Contact key="contact" />}
