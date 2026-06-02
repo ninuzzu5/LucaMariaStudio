@@ -72,7 +72,7 @@ export default function Navbar({ navigate }: NavbarProps) {
                   className="group cursor-pointer border-b border-[#0A0A0A]/10 py-5 flex justify-between items-center"
                   onClick={() => handleNavigate(item)}
                 >
-                  <span className="font-display text-5xl md:text-7xl uppercase tracking-tight group-hover:text-[#1B4A3A] transition-colors duration-200">
+                  <span className="font-display text-4xl sm:text-5xl md:text-7xl uppercase tracking-tight group-hover:text-[#1B4A3A] transition-colors duration-200">
                     {item}
                   </span>
                   <span className="font-sans text-xs uppercase tracking-widest text-[#0A0A0A]/40 group-hover:text-[#1B4A3A] transition-colors">

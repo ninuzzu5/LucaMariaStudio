@@ -42,7 +42,7 @@ export default function Portfolio({ key }: { key?: string }) {
     >
       <div className="pt-32 px-6 md:px-16 mb-8">
         <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#1B4A3A] mb-4">— Archivio</p>
-        <h1 className="font-declaration text-7xl md:text-9xl uppercase text-[#F2F0EC]">
+        <h1 className="font-declaration text-6xl md:text-9xl uppercase text-[#F2F0EC]">
           Portfolio
         </h1>
       </div>
