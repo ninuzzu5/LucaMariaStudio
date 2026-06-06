@@ -1,5 +1,6 @@
 import { motion, type Variants } from 'motion/react';
 import Marquee from '../components/Marquee';
+import ValuesStrip from '../components/ValuesStrip';
 
 export default function About() {
   const pageVariants: Variants = {
@@ -93,25 +94,7 @@ export default function About() {
         </div>
 
         {/* Values strip */}
-        <section className="py-24 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-8 border-t border-[#F2F0EC]/10 pt-8 md:pt-16">
-            {['Appartenenza', 'Ribellione', 'Empatia', 'Sperimentazione'].map((val, i) => (
-              <motion.div
-                key={val}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-end justify-between gap-6 border-b border-[#F2F0EC]/10 py-6 md:block md:border-b-0 md:py-0"
-              >
-                <p className="font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] md:mb-3">0{i + 1}</p>
-                <h3 className="max-w-[72vw] text-right font-declaration text-3xl uppercase leading-none text-[#F2F0EC] md:max-w-none md:text-left">
-                  {val}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+        <ValuesStrip />
 
       </section>
     </motion.div>
