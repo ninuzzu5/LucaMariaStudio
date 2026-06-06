@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, type Variants } from 'motion/react';
+import { motion, useScroll, useSpring, useTransform, type Variants } from 'motion/react';
 
 interface ProjectDetailProps {
   navigate: (page: string) => void;
@@ -34,7 +34,12 @@ export default function ProjectDetail({ navigate }: ProjectDetailProps) {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-78%"]);
+  const rawX = useTransform(scrollYProgress, [0, 1], ["0%", "-78%"]);
+  const x = useSpring(rawX, {
+    stiffness: 85,
+    damping: 28,
+    mass: 0.35,
+  });
 
   return (
     <motion.div
@@ -62,9 +67,9 @@ export default function ProjectDetail({ navigate }: ProjectDetailProps) {
         </div>
       </header>
 
-      <section ref={targetRef} className="relative h-[420vh] bg-[#0A0A0A]">
+      <section ref={targetRef} className="relative h-[560vh] bg-[#0A0A0A] md:h-[420vh]">
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-16 px-6 md:gap-32 md:px-32">
+          <motion.div style={{ x }} className="flex gap-12 px-6 md:gap-32 md:px-32">
             {projects.map((project, i) => {
               const isEven = i % 2 === 0;
               return (
