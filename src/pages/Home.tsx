@@ -1,11 +1,7 @@
 import { motion, type Variants } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Marquee from '../components/Marquee';
-
-interface HomeProps {
-  navigate: (page: string) => void;
-  key?: string;
-}
 
 const featuredWorks = [
   { title: 'EMPOWER', category: 'Lookbook', img: '/img/3.jpeg' },
@@ -14,7 +10,9 @@ const featuredWorks = [
   { title: 'WHO OWNS THE STREETS?', category: 'Concept', img: '/img/6.jpeg' },
 ];
 
-export default function Home({ navigate }: HomeProps) {
+export default function Home() {
+  const navigate = useNavigate();
+
   const pageVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     in: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
@@ -66,8 +64,8 @@ export default function Home({ navigate }: HomeProps) {
             className="mt-16 sm:absolute sm:right-12 sm:bottom-32 sm:mt-0"
           >
             <button
-              onClick={() => navigate('collections')}
-              className="group flex flex-col items-start gap-2 font-sans text-xs uppercase tracking-[0.2em] text-[#F2F0EC] hover:text-[#C8C4BC] transition-colors"
+              onClick={() => navigate('/collections')}
+              className="group flex flex-col items-start gap-2 font-sans text-xs uppercase tracking-[0.2em] text-[#F2F0EC] hover:text-[#C8C4BC] transition-colors py-4 pr-4"
             >
               <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform duration-500 mb-2" />
               Scopri la collezione
@@ -113,13 +111,13 @@ export default function Home({ navigate }: HomeProps) {
               <span className="text-[#1B4A3A]">PARLA</span>
             </h2>
             <p className="font-sans text-[#F2F0EC] text-sm md:text-base leading-relaxed mb-12 max-w-sm mix-blend-exclusion">
-              LMS nasce dall&apos;incontro tra arte, moda e streetwear. 
-              L&apos;obiettivo è trasformare ogni capo in un mezzo di 
+              LMS nasce dall&apos;incontro tra arte, moda e streetwear.
+              L&apos;obiettivo è trasformare ogni capo in un mezzo di
               comunicazione capace di trasmettere messaggi sociali e culturali.
               Ogni pezzo è unico. Ogni pezzo è un atto.
             </p>
             <button
-              onClick={() => navigate('about')}
+              onClick={() => navigate('/about')}
               className="group flex items-center gap-4 font-sans text-xs uppercase tracking-[0.3em] text-[#F2F0EC] hover:text-[#1B4A3A] transition-colors w-fit pb-2 border-b border-[#F2F0EC]/30 hover:border-[#1B4A3A]"
             >
               Chi siamo
@@ -137,7 +135,7 @@ export default function Home({ navigate }: HomeProps) {
               Selected<br />Works
             </h2>
             <button
-              onClick={() => navigate('portfolio')}
+              onClick={() => navigate('/portfolio')}
               className="mt-8 md:mt-0 flex items-center gap-3 font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] hover:text-[#0A0A0A] transition-colors border border-[#1B4A3A] rounded-full px-6 py-3"
             >
               View all <ArrowRight size={14} />
@@ -152,7 +150,7 @@ export default function Home({ navigate }: HomeProps) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
               className="md:col-span-12 group cursor-pointer relative overflow-hidden aspect-[16/9] md:aspect-[21/9]"
-              onClick={() => navigate('portfolio')}
+              onClick={() => navigate('/portfolio')}
             >
               <img src={featuredWorks[0].img} alt={featuredWorks[0].title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-gradient-to-t from-[#0A0A0A]/90 to-transparent flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -171,7 +169,7 @@ export default function Home({ navigate }: HomeProps) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="md:col-span-5 md:mt-24 group cursor-pointer relative overflow-hidden aspect-[3/4]"
-              onClick={() => navigate('portfolio')}
+              onClick={() => navigate('/portfolio')}
             >
               <img src={featuredWorks[1].img} alt={featuredWorks[1].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute inset-0 bg-[#0A0A0A]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
@@ -186,7 +184,7 @@ export default function Home({ navigate }: HomeProps) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="md:col-span-6 md:col-start-7 group cursor-pointer relative overflow-hidden aspect-square"
-              onClick={() => navigate('portfolio')}
+              onClick={() => navigate('/portfolio')}
             >
               <img src={featuredWorks[2].img} alt={featuredWorks[2].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute top-6 left-6 mix-blend-difference">
@@ -202,7 +200,7 @@ export default function Home({ navigate }: HomeProps) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
               className="md:col-span-10 md:col-start-2 group cursor-pointer relative overflow-hidden aspect-[16/7]"
-              onClick={() => navigate('portfolio')}
+              onClick={() => navigate('/portfolio')}
             >
               <img src={featuredWorks[3].img} alt={featuredWorks[3].title} className="w-full h-full object-cover object-[50%_30%] group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute inset-0 bg-[#0A0A0A]/20" />

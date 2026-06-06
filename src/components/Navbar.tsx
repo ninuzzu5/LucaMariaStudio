@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
-
-interface NavbarProps {
-  navigate: (page: string) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 const navItems = ['home', 'portfolio', 'collections', 'about', 'contact'];
 
-export default function Navbar({ navigate }: NavbarProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+function itemToPath(item: string) {
+  return item === 'home' ? '/' : `/${item}`;
+}
 
-  const handleNavigate = (page: string) => {
-    navigate(page);
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigate = (item: string) => {
+    navigate(itemToPath(item));
     setIsMenuOpen(false);
   };
 

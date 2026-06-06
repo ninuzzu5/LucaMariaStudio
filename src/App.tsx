@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 
 // Components
@@ -18,30 +18,32 @@ import Collections from './pages/Collections';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const navigate = (page: string) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-  };
-
+function AnimatedRoutes() {
+  const location = useLocation();
   return (
-    <div className="min-h-screen flex flex-col selection:bg-[#1B4A3A] selection:text-[#F2F0EC] grain overflow-x-clip w-full relative">
-      <Navbar navigate={navigate} />
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/tutti-colpevoli" element={<ProjectDetail />} />
+        <Route path="/collections" element={<Collections />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
-      <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          {currentPage === 'home' && <Home key="home" navigate={navigate} />}
-          {currentPage === 'portfolio' && <Portfolio key="portfolio" navigate={navigate} />}
-          {currentPage === 'tutti-colpevoli' && <ProjectDetail key="tutti-colpevoli" navigate={navigate} />}
-          {currentPage === 'collections' && <Collections key="collections" />}
-          {currentPage === 'about' && <About key="about" />}
-          {currentPage === 'contact' && <Contact key="contact" />}
-        </AnimatePresence>
-      </main>
-      
-      <Footer />
-    </div>
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col selection:bg-[#1B4A3A] selection:text-[#F2F0EC] grain overflow-x-clip w-full relative">
+        <Navbar />
+        <main className="flex-grow">
+          <AnimatedRoutes />
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }

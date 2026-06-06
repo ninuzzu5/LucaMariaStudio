@@ -1,9 +1,6 @@
 import { motion, type Variants } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-
-interface PortfolioProps {
-  navigate: (page: string) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 const featuredProject = {
   title: 'TUTTI COLPEVOLI SS26',
@@ -12,7 +9,9 @@ const featuredProject = {
   img: '/img/1.jpeg',
 };
 
-export default function Portfolio({ navigate }: PortfolioProps) {
+export default function Portfolio() {
+  const navigate = useNavigate();
+
   const pageVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     in: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
@@ -42,7 +41,7 @@ export default function Portfolio({ navigate }: PortfolioProps) {
       <section className="px-6 py-16 md:px-16 md:py-24">
         <motion.button
           type="button"
-          onClick={() => navigate('tutti-colpevoli')}
+          onClick={() => navigate('/portfolio/tutti-colpevoli')}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}

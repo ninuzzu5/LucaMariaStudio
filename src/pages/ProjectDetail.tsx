@@ -1,9 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform, type Variants } from 'motion/react';
-
-interface ProjectDetailProps {
-  navigate: (page: string) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 const projects = [
   { category: 'Lookbook', year: '2026', img: '/img/3.jpeg' },
@@ -22,7 +19,9 @@ const projects = [
   { category: 'Look', year: '2026', img: '/img/14.jpeg' },
 ];
 
-export default function ProjectDetail({ navigate }: ProjectDetailProps) {
+export default function ProjectDetail() {
+  const navigate = useNavigate();
+
   const pageVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     in: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
@@ -51,7 +50,7 @@ export default function ProjectDetail({ navigate }: ProjectDetailProps) {
     >
       <header className="px-6 pt-32 md:px-16">
         <button
-          onClick={() => navigate('portfolio')}
+          onClick={() => navigate('/portfolio')}
           className="mb-12 font-sans text-[10px] uppercase tracking-[0.35em] text-[#C8C4BC] transition-colors hover:text-[#F2F0EC]"
         >
           ← Torna all'archivio
@@ -83,6 +82,7 @@ export default function ProjectDetail({ navigate }: ProjectDetailProps) {
                   <img
                     src={project.img}
                     alt={project.category}
+                    loading="lazy"
                     className="h-full w-full object-cover grayscale-[20%] transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-[#0A0A0A]/10 to-transparent" />
