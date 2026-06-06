@@ -78,9 +78,6 @@ export default function Portfolio({ navigate }: PortfolioProps) {
             </div>
 
             <div className="pointer-events-none absolute inset-0 bg-[#1B4A3A]/0 transition-colors duration-500 group-hover:bg-[#1B4A3A]/10" />
-            <div className="pointer-events-none absolute bottom-6 left-6 font-sans text-[10px] uppercase tracking-[0.3em] text-[#F2F0EC]/0 transition-colors duration-500 group-hover:text-[#F2F0EC]/45 md:bottom-10 md:left-10">
-              Apri progetto
-            </div>
           </div>
         </motion.button>
       </section>
