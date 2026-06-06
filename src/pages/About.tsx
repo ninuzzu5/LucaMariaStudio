@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'motion/react';
 import Marquee from '../components/Marquee';
 
-export default function About({ key }: { key?: string }) {
+export default function About() {
   const pageVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     in: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
@@ -44,7 +44,7 @@ export default function About({ key }: { key?: string }) {
         {/* riga 1 */}
         <div className="grid grid-cols-1 md:grid-cols-12 border-y border-[#F2F0EC]/20">
           <div className="col-span-1 border-r border-[#F2F0EC]/20 p-6 hidden md:block">
-            <p className="font-sans text-[10px] uppercase tracking-widest text-[#1B4A3A][writing-mode:vertical-rl] rotate-180 h-full">Vision</p>
+            <p className="font-sans text-[10px] uppercase tracking-widest text-[#1B4A3A] [writing-mode:vertical-rl] rotate-180 h-full">Vision</p>
           </div>
           <div className="col-span-11 p-6 md:p-16 relative overflow-hidden">
             <h2 className="font-declaration text-5xl md:text-8xl lg:text-[9vw] leading-[0.8] mb-12 uppercase mix-blend-difference z-10 relative">
@@ -92,23 +92,26 @@ export default function About({ key }: { key?: string }) {
           </div>
         </div>
 
-        {/* riga 3 - Minimal Values */}
-        <div className="p-6 md:p-16 min-h-[50vh] flex flex-col justify-end pb-32">
-          <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#C8C4BC] mb-12">— Valori & Tecniche</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
-             {['Appartenenza', 'Ribellione', 'Empatia', 'Sperimentazione'].map((val, i) => (
-                <div key={val} className="border-t border-[#F2F0EC]/20 pt-6">
-                  <p className="font-sans text-[10px] uppercase tracking-widest text-[#1B4A3A] mb-4">0{i + 1}</p>
-                  <h3 className="font-declaration text-3xl md:text-4xl uppercase select-none">{val}</h3>
-                </div>
-              ))}
-              {['Aerografia su tessuto', 'Stampa 3D', 'Stampe artigianali', 'Pezzi unici'].map((tech, i) => (
-                <div key={tech} className="pt-2">
-                  <h3 className="font-sans text-xs md:text-sm uppercase tracking-[0.15em] text-[#C8C4BC]">{tech}</h3>
-                </div>
-              ))}
+        {/* Values strip */}
+        <section className="py-24 px-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-8 border-t border-[#F2F0EC]/10 pt-8 md:pt-16">
+            {['Appartenenza', 'Ribellione', 'Empatia', 'Sperimentazione'].map((val, i) => (
+              <motion.div
+                key={val}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-end justify-between gap-6 border-b border-[#F2F0EC]/10 py-6 md:block md:border-b-0 md:py-0"
+              >
+                <p className="font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] md:mb-3">0{i + 1}</p>
+                <h3 className="max-w-[72vw] text-right font-declaration text-3xl uppercase leading-none text-[#F2F0EC] md:max-w-none md:text-left">
+                  {val}
+                </h3>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </section>
 
       </section>
     </motion.div>

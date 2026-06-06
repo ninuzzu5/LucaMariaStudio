@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'motion/react';
 import { ArrowUpRight, Instagram } from 'lucide-react';
 
-export default function Contact({ key }: { key?: string }) {
+export default function Contact() {
   const pageVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     in: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
@@ -29,7 +29,7 @@ export default function Contact({ key }: { key?: string }) {
               <p className="font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] mb-4">Email principale</p>
               <a
                 href="mailto:info@lucamariastudio.com"
-                className="group font-declaration text-3xl md:text-4xl uppercase text-[#F2F0EC] hover:text-[#C8C4BC] transition-colors flex items-center gap-3"
+                className="group font-declaration text-xl sm:text-2xl md:text-4xl uppercase text-[#F2F0EC] hover:text-[#C8C4BC] transition-colors flex items-center gap-3 break-all"
               >
                 info@lucamariastudio.com
                 <ArrowUpRight size={28} strokeWidth={1.5} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -50,7 +50,7 @@ export default function Contact({ key }: { key?: string }) {
             <div className="border-t border-[#F2F0EC]/10 pt-8">
               <p className="font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] mb-4">Social</p>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/lucamariastudio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 font-sans text-[#F2F0EC] hover:text-[#C8C4BC] transition-colors"

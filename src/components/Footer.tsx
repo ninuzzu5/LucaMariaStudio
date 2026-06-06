@@ -16,7 +16,7 @@ export default function Footer() {
           </p>
           <div className="mt-8 flex gap-6 font-sans text-xs uppercase tracking-widest">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/lucamariastudio/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#C8C4BC] hover:text-[#F2F0EC] transition-colors"

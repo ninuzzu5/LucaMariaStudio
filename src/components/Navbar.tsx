@@ -83,7 +83,7 @@ export default function Navbar({ navigate }: NavbarProps) {
             </div>
 
             <div className="flex gap-8 font-sans text-xs uppercase tracking-widest text-[#0A0A0A]/50">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#1B4A3A] transition-colors">Instagram</a>
+              <a href="https://www.instagram.com/lucamariastudio/" target="_blank" rel="noopener noreferrer" className="hover:text-[#1B4A3A] transition-colors">Instagram</a>
               <span>© {new Date().getFullYear()} LMS</span>
             </div>
           </motion.div>

@@ -47,7 +47,7 @@ const collection = {
   ],
 };
 
-export default function Collections({ key }: { key?: string }) {
+export default function Collections() {
   const [activeLook, setActiveLook] = useState<number | null>(null);
   const [activePhoto, setActivePhoto] = useState(0);
 

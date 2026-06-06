@@ -6,20 +6,20 @@ interface ProjectDetailProps {
 }
 
 const projects = [
-  { title: 'EMPOWER', category: 'Lookbook', year: '2025', img: '/img/3.jpeg' },
-  { title: 'WHO OWNS THE STREETS?', category: 'Campaign', year: '2025', img: '/img/6.jpeg' },
-  { title: 'MY RULES MY BODY', category: 'Concept', year: '2025', img: '/img/4.jpeg' },
-  { title: 'ACT NOW OR SWIM LATER', category: 'Statement', year: '2025', img: '/img/5.jpeg' },
-  { title: 'SORRY WAR', category: 'Editorial', year: '2025', img: '/img/1.jpeg' },
-  { title: 'DENIM ARCHIVES', category: 'Collection', year: '2025', img: '/img/2.jpeg' },
-  { title: 'PORTRAIT I', category: 'Portrait', year: '2025', img: '/img/7.jpeg' },
-  { title: 'THE BRIEFCASE', category: 'Look', year: '2025', img: '/img/8.jpeg' },
-  { title: 'PORTRAIT II', category: 'Portrait', year: '2025', img: '/img/9.jpeg' },
-  { title: 'IN MOTION', category: 'Look', year: '2025', img: '/img/10.jpeg' },
-  { title: 'PINSTRIPE', category: 'Detail', year: '2025', img: '/img/11.jpeg' },
-  { title: 'NOIR', category: 'Look', year: '2025', img: '/img/12.jpeg' },
-  { title: 'FACE', category: 'Portrait', year: '2025', img: '/img/13.jpeg' },
-  { title: 'SILHOUETTE', category: 'Look', year: '2025', img: '/img/14.jpeg' },
+  { category: 'Lookbook', year: '2026', img: '/img/3.jpeg' },
+  { category: 'Campaign', year: '2026', img: '/img/6.jpeg' },
+  { category: 'Concept', year: '2026', img: '/img/4.jpeg' },
+  { category: 'Statement', year: '2026', img: '/img/5.jpeg' },
+  { category: 'Editorial', year: '2026', img: '/img/1.jpeg' },
+  { category: 'Collection', year: '2026', img: '/img/2.jpeg' },
+  { category: 'Portrait', year: '2026', img: '/img/7.jpeg' },
+  { category: 'Look', year: '2026', img: '/img/8.jpeg' },
+  { category: 'Portrait', year: '2026', img: '/img/9.jpeg' },
+  { category: 'Look', year: '2026', img: '/img/10.jpeg' },
+  { category: 'Detail', year: '2026', img: '/img/11.jpeg' },
+  { category: 'Look', year: '2026', img: '/img/12.jpeg' },
+  { category: 'Portrait', year: '2026', img: '/img/13.jpeg' },
+  { category: 'Look', year: '2026', img: '/img/14.jpeg' },
 ];
 
 export default function ProjectDetail({ navigate }: ProjectDetailProps) {
@@ -74,7 +74,7 @@ export default function ProjectDetail({ navigate }: ProjectDetailProps) {
               const isEven = i % 2 === 0;
               return (
                 <div
-                  key={project.title}
+                  key={project.img}
                   className={`group relative aspect-[3/4] w-[80vw] shrink-0 cursor-pointer md:w-[35vw] ${isEven ? 'mt-0' : 'mt-8 md:mt-24'}`}
                 >
                   <div className="absolute -left-6 top-8 hidden origin-left rotate-[-90deg] font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] mix-blend-difference md:block">
@@ -82,14 +82,10 @@ export default function ProjectDetail({ navigate }: ProjectDetailProps) {
                   </div>
                   <img
                     src={project.img}
-                    alt={project.title}
+                    alt={project.category}
                     className="h-full w-full object-cover grayscale-[20%] transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-[#0A0A0A]/10 to-transparent" />
-
-                  <h3 className="absolute bottom-4 left-4 right-4 font-declaration text-2xl uppercase leading-[0.85] text-[#F2F0EC] drop-shadow-[0_4px_18px_rgba(0,0,0,0.85)] md:text-4xl">
-                    {project.title}
-                  </h3>
                   <p className="absolute -top-6 right-0 font-sans text-[10px] uppercase tracking-[0.2em] text-[#C8C4BC]">
                     LMS · {project.year}
                   </p>
