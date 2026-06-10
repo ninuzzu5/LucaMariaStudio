@@ -19,8 +19,8 @@ export default function About() {
     >
       {/* Brutalist Hero */}
       <div className="w-full px-6 mb-32 relative">
-        <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#1B4A3A] mb-8">— Studio / Manifesto</p>
-        
+        <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#1B4A3A] mb-12 md:mb-16">— Studio / Manifesto</p>
+
         {/* Massive full-width text */}
         <h1 className="font-declaration text-[22vw] leading-[0.75] uppercase text-[#F2F0EC] tracking-tighter break-words hyphens-none">
           LUCA<br />MARIA<br />STUDIO
