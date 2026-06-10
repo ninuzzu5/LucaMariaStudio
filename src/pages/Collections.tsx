@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, type Variants } from 'motion/react';
 import { ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const collection = {
   title: 'SS26',
@@ -48,6 +49,7 @@ const collection = {
 };
 
 export default function Collections() {
+  const navigate = useNavigate();
   const [activeLook, setActiveLook] = useState<number | null>(null);
   const [activePhoto, setActivePhoto] = useState(0);
 
@@ -198,7 +200,10 @@ export default function Collections() {
               <p className="font-sans text-xs uppercase tracking-[0.3em] text-[#1B4A3A] mb-6">Next Step</p>
               <h3 className="font-declaration text-6xl md:text-8xl uppercase leading-[0.8]">Accedi al<br />Lookbook</h3>
             </div>
-            <button className="group flex flex-col items-start gap-3 font-sans text-xs uppercase tracking-[0.3em] text-[#0A0A0A] hover:text-[#1B4A3A] transition-colors">
+            <button
+              onClick={() => navigate('/contact')}
+              className="group flex flex-col items-start gap-3 font-sans text-xs uppercase tracking-[0.3em] text-[#0A0A0A] hover:text-[#1B4A3A] transition-colors"
+            >
               <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform duration-500 mb-2" />
               Invia richiesta
             </button>

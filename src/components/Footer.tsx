@@ -34,15 +34,10 @@ export default function Footer() {
             <p className="text-[#C8C4BC] mb-6 font-sans text-sm leading-relaxed">
               Accesso anticipato ai drop e contenuti esclusivi.
             </p>
-            <div className="flex border-b border-[#F2F0EC]/20 focus-within:border-[#1B4A3A] transition-colors pb-2">
-              <input
-                type="email"
-                placeholder="EMAIL"
-                className="bg-transparent w-full outline-none font-sans uppercase tracking-widest text-xs placeholder:text-[#C8C4BC]/40 text-[#F2F0EC]"
-              />
-              <button className="hover:text-[#1B4A3A] transition-colors text-[#C8C4BC]">
-                <ArrowRight size={18} />
-              </button>
+            <div className="border-t border-[#F2F0EC]/10 pt-4">
+              <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#C8C4BC]/50">
+                Newsletter — disponibile a breve
+              </p>
             </div>
           </div>
 

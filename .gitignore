@@ -1,8 +1,31 @@
+# Dependencies
 node_modules/
-build/
+
+# Build output
 dist/
-coverage/
-.DS_Store
+build/
+
+# Environment variables — mai committare
+.env
+.env.local
+.env.*.local
+
+# Logs
 *.log
-.env*
-!.env.example
+npm-debug.log*
+yarn-debug.log*
+
+# Editor / OS
+.DS_Store
+.DS_Store?
+Thumbs.db
+.vscode/
+.idea/
+
+# Vite / TypeScript cache
+.vite/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+

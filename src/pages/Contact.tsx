@@ -69,49 +69,39 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right form */}
-          <form className="flex flex-col gap-8 bg-[#F2F0EC]/4 p-10 border border-[#F2F0EC]/10">
-            <h2 className="font-declaration text-3xl uppercase text-[#F2F0EC] mb-2">Invia un messaggio</h2>
-
-            {[
-              { label: 'Nome', type: 'text', placeholder: '' },
-              { label: 'Email', type: 'email', placeholder: '' },
-            ].map(({ label, type }) => (
-              <div key={label} className="flex flex-col gap-2">
-                <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#C8C4BC]">{label}</label>
-                <input
-                  type={type}
-                  className="bg-transparent border-b border-[#F2F0EC]/20 focus:border-[#1B4A3A] outline-none py-3 font-sans text-sm text-[#F2F0EC] transition-colors placeholder:text-[#C8C4BC]/30"
-                />
-              </div>
-            ))}
-
-            <div className="flex flex-col gap-2">
-              <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#C8C4BC]">Oggetto</label>
-              <select className="bg-[#0A0A0A] border-b border-[#F2F0EC]/20 focus:border-[#1B4A3A] outline-none py-3 font-sans text-sm text-[#C8C4BC] transition-colors">
-                <option value="">Seleziona...</option>
-                <option value="press">Press & Media</option>
-                <option value="collab">Collaborazioni</option>
-                <option value="info">Informazioni generali</option>
-                <option value="order">Acquisto</option>
-              </select>
+          {/* Right — direct contact panel */}
+          <div className="flex flex-col gap-8 bg-[#F2F0EC]/40 p-10 border border-[#F2F0EC]/10 justify-between">
+            <div>
+              <h2 className="font-declaration text-3xl uppercase text-[#F2F0EC] mb-6">Scrivici</h2>
+              <p className="font-sans text-[#C8C4BC] text-sm leading-relaxed max-w-sm">
+                Per richieste di acquisto, collaborazioni, press o informazioni generali scrivi direttamente all&apos;indirizzo che preferisci. Ti risponderemo entro 48 ore.
+              </p>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#C8C4BC]">Messaggio</label>
-              <textarea
-                rows={4}
-                className="bg-transparent border-b border-[#F2F0EC]/20 focus:border-[#1B4A3A] outline-none py-3 font-sans text-sm text-[#F2F0EC] transition-colors resize-none placeholder:text-[#C8C4BC]/30"
-              />
+            <div className="flex flex-col gap-4 border-t border-[#F2F0EC]/10 pt-8">
+              {[
+                { label: 'Generale', email: 'info@lucamariastudio.com' },
+                { label: 'Press & Media', email: 'press@lucamariastudio.com' },
+                { label: 'Collaborazioni', email: 'collab@lucamariastudio.com' },
+              ].map(({ label, email }) => (
+                <a
+                  key={label}
+                  href={`mailto:${email}`}
+                  className="group flex items-center justify-between border-b border-[#F2F0EC]/10 pb-4 hover:border-[#1B4A3A] transition-colors"
+                >
+                  <div>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#1B4A3A] mb-1">{label}</p>
+                    <p className="font-sans text-sm text-[#F2F0EC] group-hover:text-[#C8C4BC] transition-colors">{email}</p>
+                  </div>
+                  <ArrowUpRight size={16} strokeWidth={1.5} className="text-[#C8C4BC] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </a>
+              ))}
             </div>
 
-            <button
-              type="button"
-              className="mt-4 bg-[#F2F0EC] text-[#0A0A0A] font-declaration text-xl uppercase tracking-widest py-4 hover:bg-[#1B4A3A] hover:text-[#F2F0EC] transition-colors"
-            >
-              Invia
-            </button>
-          </form>
+            <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#C8C4BC]/50">
+              Form di contatto — disponibile a breve
+            </p>
+          </div>
         </div>
       </div>
     </motion.div>
