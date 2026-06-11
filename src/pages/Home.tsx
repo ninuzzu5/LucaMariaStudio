@@ -7,7 +7,7 @@ import ValuesStrip from '../components/ValuesStrip';
 const featuredWorks = [
   { title: 'EMPOWER', category: 'Lookbook', img: '/img/3.jpeg' },
   { title: 'MY RULES MY BODY', category: 'Campaign', img: '/img/4.jpeg' },
-  { title: 'ACT NOW OR SWIM AFTER', category: 'Statement', img: '/img/5.jpeg' },
+  { title: 'ACT NOW OR SWIM LATER', category: 'Statement', img: '/img/5.jpeg' },
   { title: 'WHO OWNS THE STREETS?', category: 'Concept', img: '/img/6.jpeg' },
 ];
 

@@ -38,7 +38,7 @@ const collection = {
     },
     {
       number: '04',
-      title: 'ACT NOW OR SWIM AFTER',
+      title: 'ACT NOW OR SWIM LATER',
       desc: 'Tank top 100% cotone aerografata artigianalmente. Denim jacket. Miniskirt in ecopelle con cintura rigata.',
       tags: ['Tank top 100% cotone', 'Denim jacket', 'Miniskirt in ecopelle', 'Cintura rigata'],
       img: '/img/5.jpeg',
